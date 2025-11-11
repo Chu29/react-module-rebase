@@ -31,9 +31,9 @@ export default function Form() {
   console.log(errors);
 
   return (
-    <form onSubmit={handleSubmit} className="form">
-      <fieldset>
-        <legend>Registration</legend>
+    <div className="container">
+      <form onSubmit={handleSubmit} className="form">
+      <h2>Create Profile</h2>
         <label htmlFor="firstName">First Name</label>
         <input
           value={values.firstName}
@@ -109,10 +109,11 @@ export default function Form() {
         ) : (
           ""
         )}
-      </fieldset>
-      <button disabled={isSubmitting} type="submit">
-        Submit
-      </button>
-    </form>
+
+        <button disabled={isSubmitting} type="submit">
+          Submit
+        </button>
+      </form>
+    </div>
   );
 }
