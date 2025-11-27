@@ -1,13 +1,18 @@
 import useBearStore from "./store/bearStore";
-import './index.css'
+import "./index.css";
 
 export default function App() {
-  const { bears, increase } = useBearStore();
+  const bears = useBearStore((state) => state.bears);
 
   return (
     <div className="container">
       <h1>{bears} bears around hear...</h1>
-      <button onClick={increase}>Add one</button>
+      <Controls />
     </div>
   );
+}
+
+function Controls() {
+  const increase = useBearStore((state) => state.increase);
+  return <button onClick={increase}>Add one</button>;
 }
